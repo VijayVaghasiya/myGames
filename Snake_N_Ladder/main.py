@@ -41,7 +41,7 @@ class Dice(object):
             # Overwrite last session to blit again
             screen.fill((255,255,255))  
             template() 
-            screen.blit(dice[self.number-1],(680+65.4, 30))
+            screen.blit(dice[self.number-1],(int(680+65.4), 30))
             self.create_button()
             self.show_dice()
             pygame.display.update()
@@ -64,15 +64,15 @@ class Dice(object):
 
 
     def show_dice(self):
-        screen.blit(dice[self.number-1],(680+65.4, 30))
+        screen.blit(dice[self.number-1],(int(680+65.4), 30))
         show_player(players['player 1'][1],players['player 1'][2],players['player 1'][0])
         show_player(players['player 2'][1],players['player 2'][2],players['player 2'][0])
 
     def create_button(self):
         # Draw recangle for button
-        pygame.draw.rect(screen, (0,0,0),(700+65.4,200,100,50))
+        pygame.draw.rect(screen, (0,0,0),(int(700+65.4),200,100,50))
         roll_text = pygame.font.Font('freesansbold.ttf', 20)
-        screen.blit(roll_text.render("ROLL", True, (255,255,255)),(720+65.4, 215))
+        screen.blit(roll_text.render("ROLL", True, (255,255,255)),(int(720+65.4), 215))
 
      
 
@@ -105,12 +105,12 @@ player_font = pygame.font.Font('freesansbold.ttf', 12)
 
 def display_player_text(player):
     player_text = player_font.render(player, True, (0,0,0))
-    screen.blit(player_text,(680+65.4, 10))
+    screen.blit(player_text,(int(680+65.4), 10))
 
 
 
 def template():
-    screen.blit(game_image,(65.4,0))
+    screen.blit(game_image,(int(65.4),0))
 
 once = True
 def move_player(x,y, player):
